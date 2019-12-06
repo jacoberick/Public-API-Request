@@ -13,7 +13,12 @@ $.ajax({
     let userName = `${user.name.first} ${user.name.last}`;
     let email = user.email;
     let location = `${user.location.city}, ${user.location.state}`;
+    let street = `${user.location.street.number} ${user.location.street.name}`;
     let userID = user.login.username;
+    let phone = user.phone;
+    let dob = user.dob.date;
+    let dobFiltered = dob.slice(0, 10);
+    let detailedLocation = `${street} ${location} ${user.location.postcode}`;
     //HTML construction for gallery
     let userHtml = `<div class="card ${userID}">
         <div class="card-img-container">
@@ -38,11 +43,11 @@ $.ajax({
               <img class="modal-img" src=${thumbPhoto} alt="profile picture">
               <h3 id="name" class="modal-name cap">${userName}</h3>
               <p class="modal-text">${email}</p>
-              <p class="modal-text cap">${location}</p>
+              <p class="modal-text cap">${detailedLocation}</p>
               <hr>
-              <p class="modal-text">(555) 555-5555</p>
-              <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
-              <p class="modal-text">Birthday: 10/21/2015</p>
+              <p class="modal-text">${phone}</p>
+              <p class="modal-text">${location}</p>
+              <p class="modal-text">Birthday: ${dobFiltered}</p>
             </div>
       </div>`;
     $("#gallery").after(modalHtml);
