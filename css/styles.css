@@ -146,7 +146,6 @@ header h1 {
   background: rgba(255, 255, 255, 1);
   border-radius: 0.25em;
   border: 1px solid rgba(100, 100, 100, 0.3);
-  transition: 0.4s ease-out;
 }
 
 .modal-close-btn {
@@ -210,11 +209,11 @@ header h1 {
 }
 
 .hide {
-  visibility: hidden;
+  display: none;
 }
 
 .show {
-  visibility: visible;
+  display: block;
 }
 /* =====================================
    Media Queries
